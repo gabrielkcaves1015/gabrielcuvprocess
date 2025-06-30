@@ -1,0 +1,1995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Excellence Framework - Marsh SSC</title>
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #4b52ab 0%, #5d3d8a 100%);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 0.8rem 0; /* Reduced padding for smaller header */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6rem; /* Slightly smaller logo */
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Added text shadow */
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem; /* Slightly reduced gap */
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem; /* Padding for button-like appearance */
+            border-radius: 20px; /* Rounded corners for buttons */
+            transition: all 0.3s ease;
+            text-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.4); /* Added text shadow */
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.25); /* Stronger background on hover */
+            color: #fff; /* Keep text white on hover */
+            transform: translateY(-3px); /* Slightly more lift effect */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+        }
+
+        /* Main sections */
+        section {
+            min-height: 100vh;
+            padding: 100px 0 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        .slide {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 2rem 0;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            width: 100%;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideIn 0.8s forwards;
+        }
+
+        @keyframes slideIn {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #4b52ab; /* Changed to a vibrant blue/purple from gradient */
+        }
+
+        /* Executive Summary Cards */
+        .exec-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .exec-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 0.8s forwards;
+            position: relative; /* For the subtle glow */
+            overflow: hidden;
+        }
+         .exec-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+
+
+        @keyframes fadeInUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .exec-card h3 {
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.4); /* Added text shadow for visibility */
+            font-weight: bold; /* Ensure bold for emphasis */
+        }
+
+        .exec-card .number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Process Flow */
+        .visual-process-flow {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            justify-content: center;
+            gap: 1.5rem; /* Gap between process blocks */
+            margin: 3rem 0;
+            position: relative;
+        }
+
+        .process-block {
+            background: #ffffff; /* White background for process blocks */
+            color: #333;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            flex: 1 1 180px; /* Flex-grow, flex-shrink, flex-basis */
+            min-width: 180px;
+            max-width: 220px;
+            position: relative;
+            z-index: 10; /* Ensure blocks are above lines/arrows */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .process-block:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .process-block .phase-number {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .process-block h4 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #4b52ab; /* Consistent H3 color */
+        }
+        .process-block p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Arrows for visual flow */
+        .process-block:not(:last-child)::after {
+            content: '➔'; /* Right arrow */
+            position: absolute;
+            top: 50%;
+            right: -25px; /* Position to the right of the block */
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: #667eea; /* Color of the arrow */
+            z-index: 5;
+        }
+
+        /* Adjust arrow for wrapping items */
+        @media (max-width: 768px) {
+            .process-block:not(:last-child)::after {
+                content: '↓'; /* Down arrow for vertical flow */
+                right: 50%;
+                bottom: -25px; /* Position below the block */
+                top: auto;
+                transform: translateX(50%);
+            }
+             .process-block:last-child::after { /* No arrow for last item */
+                content: none;
+            }
+        }
+
+
+        /* Metrics Dashboard */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+
+        .metric-value {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .metric-trend {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem;
+            border-radius: 10px;
+            font-size: 0.9rem;
+        }
+         .metric-card .metric-icon {
+            font-size: 2rem; /* Larger icon for metric cards */
+            margin-bottom: 0.5rem;
+            animation: pulse 2s infinite ease-in-out; /* Subtle pulse animation */
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Chart Container (Value Proposition) */
+        .chart-container {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .chart {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            position: relative;
+            overflow: hidden;
+            flex-direction: column; /* To stack text elements */
+            padding: 2rem;
+            text-align: center;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.6); /* Shadow for chart text */
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            margin: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 45%;
+            position: relative;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Innovation Section */
+        .innovation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .innovation-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex; /* For icon and text alignment */
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .innovation-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+
+        .innovation-icon {
+            font-size: 3.5rem; /* Larger icons for impact */
+            margin-bottom: 1rem;
+            animation: bounceIn 0.8s ease-out; /* Bounce animation on load */
+        }
+        /* Staggered animation for icons */
+        .innovation-card:nth-child(1) .innovation-icon { animation-delay: 0.1s; }
+        .innovation-card:nth-child(2) .innovation-icon { animation-delay: 0.2s; }
+        .innovation-card:nth-child(3) .innovation-icon { animation-delay: 0.3s; }
+        .innovation-card:nth-child(4) .innovation-icon { animation-delay: 0.4s; }
+        .innovation-card:nth-child(5) .innovation-icon { animation-delay: 0.5s; }
+
+        @keyframes bounceIn {
+            0%, 20%, 40%, 60%, 80%, 100% {
+                -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+                transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            }
+            0% {
+                opacity: 0;
+                -webkit-transform: scale3d(.3, .3, .3);
+                transform: scale3d(.3, .3, .3);
+            }
+            20% {
+                -webkit-transform: scale3d(1.1, 1.1, 1.1);
+                transform: scale3d(1.1, 1.1, 1.1);
+            }
+            40% {
+                -webkit-transform: scale3d(.9, .9, .9);
+                transform: scale3d(.9, .9, .9);
+            }
+            60% {
+                opacity: 1;
+                -webkit-transform: scale3d(1.03, 1.03, 1.03);
+                transform: scale3d(1.03, 1.03, 1.03);
+            }
+            80% {
+                -webkit-transform: scale3d(.97, .97, .97);
+                transform: scale3d(.97, .97, .97);
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+            }
+        }
+
+
+        .innovation-card h3 {
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.6); /* Stronger shadow for titles */
+            font-weight: bold;
+        }
+        .innovation-card p {
+            font-size: 0.95rem; /* Slightly smaller text for better fit */
+            opacity: 0.9;
+        }
+
+
+        /* ROI Calculator (Wheel/Chart) */
+        .roi-calculator {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+        }
+
+        .roi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .roi-item {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        
+        .roi-chart-wheel {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: conic-gradient(
+                #51cf66 0% 40%, /* Cost Reduction 40% */
+                #f093fb 40% 65%, /* Productivity 25% */
+                #ff6b6b 65% 100% /* Rework 35% (remaining) */
+            );
+            margin: 2rem auto;
+            position: relative;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .roi-chart-wheel::before {
+            content: '400%+ ROI';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #4b52ab; /* Inner circle color */
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.3);
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+
+        .roi-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Buttons (general, not specific to header) */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin: 1rem auto; /* Centered */
+            display: block; /* Make it a block element to center */
+            max-width: 300px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 10px;
+            transition: width 2s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+                align-items: flex-start;
+                padding-left: 60px;
+            }
+            
+            .timeline-content {
+                width: 100%;
+            }
+            
+            .timeline-marker {
+                left: 50%;
+                transform: translateX(-50%); /* Center horizontally */
+                left: 30px; /* Fix to left sidebar for vertical timeline */
+            }
+             .roi-chart-wheel {
+                width: 180px;
+                height: 180px;
+            }
+            .roi-chart-wheel::before {
+                width: 90px;
+                height: 90px;
+                font-size: 1.1rem;
+            }
+            .process-block:not(:last-child)::after {
+                content: '↓'; /* Down arrow for vertical flow */
+                right: 50%;
+                bottom: -25px; /* Position below the block */
+                top: auto;
+                transform: translateX(50%) rotate(0deg); /* Reset rotation */
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .slide-in-left {
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .slide-in-right {
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Current/Target Comparison */
+        .comparison-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr; /* Three columns now */
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .current-state, .target-state, .initial-plan {
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .current-state {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+            color: white;
+        }
+
+        .initial-plan { /* New style for initial plan column */
+            background: linear-gradient(135deg, #feca57 0%, #ff9f43 100%); /* Orange/yellow gradient */
+            color: white;
+        }
+
+        .target-state { /* Renamed from target-state to intervention-target for clarity */
+            background: linear-gradient(135deg, #51cf66 0%, #40c057 100%);
+            color: white;
+        }
+
+        .comparison-metric {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.3); /* Shadow for visibility */
+            position: relative; /* For the progress bars */
+            overflow: hidden;
+            padding-bottom: 2.5rem; /* Make space for bar */
+        }
+        .comparison-metric-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 15px;
+            background: rgba(0,0,0,0.2);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        .comparison-metric-fill {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 1.5s ease-out;
+        }
+
+        .current-state .comparison-metric-fill { background: #c0392b; } /* Darker red */
+        .initial-plan .comparison-metric-fill { background: #e67e22; } /* Darker orange */
+        .target-state .comparison-metric-fill { background: #27ae60; } /* Darker green */
+
+
+        .comparison-value {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-icon {
+            font-size: 1.8rem; /* Slightly larger for impact */
+            margin-bottom: 0.5rem;
+        }
+        /* Conclusion Section Specific Styles */
+        .conclusion-card {
+            background: linear-gradient(135deg, #a77ffc 0%, #773ce0 100%); /* A new purple gradient */
+            color: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .conclusion-card h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+            font-weight: bold;
+        }
+
+        .conclusion-card ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+            display: inline-block; /* To center the list items */
+            text-align: left;
+        }
+
+        .conclusion-card ul li {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .conclusion-card ul li::before {
+            content: '✔️'; /* Checkmark icon */
+            font-size: 1.2em;
+            color: #d4edda; /* Light green checkmark */
+        }
+        .quote {
+            font-style: italic;
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .thank-you {
+            margin-top: 2rem;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        /* Table Styles for Deployment Plan */
+        .deployment-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            overflow: hidden; /* Ensures rounded corners apply to content */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .deployment-table th, .deployment-table td {
+            padding: 1rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .deployment-table th {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.3);
+        }
+
+        .deployment-table tbody tr:nth-child(even) {
+            background-color: rgba(240, 240, 240, 0.8);
+        }
+
+        .deployment-table tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        /* Timeline for Implementation Timeline */
+        .timeline-detail {
+            list-style: none;
+            padding-left: 20px;
+            margin-top: 0.5rem;
+        }
+        .timeline-detail li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 5px;
+        }
+        .timeline-detail li::before {
+            content: '-';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        /* New Process Phases Table */
+        .process-phases-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 3rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .process-phases-table th, .process-phases-table td {
+            padding: 1.2rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+        .process-phases-table th {
+            background: linear-gradient(90deg, #5d3d8a, #4b52ab);
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+            text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.3);
+        }
+        .process-phases-table tbody tr:nth-child(even) {
+            background-color: rgba(245, 245, 245, 0.8);
+        }
+        .process-phases-table tbody tr:last-child {
+            border-bottom: none;
+        }
+        .process-phases-table td strong {
+            color: #4b52ab;
+        }
+        .process-phases-table td ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .process-phases-table td li {
+            margin-bottom: 0.3rem;
+            position: relative;
+            padding-left: 1.2em;
+        }
+        .process-phases-table td li::before {
+            content: '• ';
+            color: #f5576c; /* Matching process phase color */
+            position: absolute;
+            left: 0;
+        }
+        
+        /* New section for Organizational Capabilities */
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .capability-card {
+            background: linear-gradient(135deg, #fff 0%, #f8f8f8 100%);
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .capability-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .capability-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+            color: #764ba2; /* Purple color */
+        }
+
+        .capability-card h4 {
+            font-size: 1.2rem;
+            color: #4b52ab;
+            margin-bottom: 0.5rem;
+        }
+        .capability-card p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Styles for the new ROI table */
+        .roi-details-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .roi-details-table caption {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #333;
+            text-align: left;
+            padding: 1rem 0;
+        }
+        .roi-details-table th, .roi-details-table td {
+            padding: 1.2rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+        .roi-details-table th {
+            background: linear-gradient(90deg, #5d3d8a, #4b52ab);
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+            text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.3);
+        }
+        .roi-details-table tbody tr:nth-child(even) {
+            background-color: rgba(245, 245, 245, 0.8);
+        }
+        .roi-details-table tbody tr:last-child {
+            border-bottom: none;
+        }
+        .roi-details-table .total-row {
+            font-weight: bold;
+            background: linear-gradient(90deg, #e0e0e0, #f0f0f0);
+        }
+        .roi-details-table .roi-calculation-row {
+            font-weight: bold;
+            background: linear-gradient(90deg, #d4edda, #e2f0d9);
+            color: #28a745; /* Green for positive ROI */
+        }
+
+        /* New styles for Root Cause Analysis & Proposed Solutions */
+        .root-cause-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .root-cause-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+        }
+        .root-cause-card h4 {
+            color: white;
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+        }
+        .root-cause-card p {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+        .root-cause-card p strong {
+            color: #ffcc66; /* Highlight for categories */
+        }
+
+        /* New styles for Process Adjustment Comparison Table */
+        .process-adjustment-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .process-adjustment-table th, .process-adjustment-table td {
+            padding: 1.2rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+        .process-adjustment-table th {
+            background: linear-gradient(90deg, #5d3d8a, #4b52ab);
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+            text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.3);
+        }
+        .process-adjustment-table tbody tr:nth-child(even) {
+            background-color: rgba(245, 245, 245, 0.8);
+        }
+        .process-adjustment-table tbody tr:last-child {
+            border-bottom: none;
+        }
+        .process-adjustment-table td ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .process-adjustment-table td li {
+            margin-bottom: 0.3rem;
+            position: relative;
+            padding-left: 1.2em;
+        }
+        .process-adjustment-table td li::before {
+            content: '• ';
+            color: #667eea; /* Consistent bullet color */
+            position: absolute;
+            left: 0;
+        }
+
+        /* Styles for the enhanced explanation boxes */
+        .explanation-box {
+            background: rgba(240, 245, 255, 0.9); /* Light blue background */
+            border-left: 5px solid #667eea; /* Blue border on the left */
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .explanation-box h4 {
+            color: #4b52ab;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .explanation-box h4 .icon {
+            font-size: 1.8rem;
+            color: #764ba2;
+        }
+        .explanation-box p {
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+        }
+        .explanation-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .explanation-box ul li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5em;
+            font-size: 0.95rem;
+        }
+        .explanation-box ul li::before {
+            content: '🔹'; /* Diamond bullet */
+            position: absolute;
+            left: 0;
+            color: #667eea;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">Training Excellence Framework</a>
+            <ul class="nav-links">
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#executive">Executive Summary</a></li>
+                <li><a href="#process">Process Design</a></li>
+                <li><a href="#part-b">Part B Analysis</a></li> <!-- Updated link -->
+                <li><a href="#scaling">Scaling</a></li>
+                <li><a href="#roi">ROI Impact</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Introduction Section -->
+        <section id="introduction">
+            <div class="container">
+                <div class="slide">
+                    <h2>Welcome to the Marsh SSC Process Improvement Specialist Assessment</h2>
+                    <p>This presentation outlines a comprehensive solution for the role of Process Improvement Specialist at Marsh's Shared Services Center for the U.S. and Canada.</p>
+                    <p>Your ability to transform insights into actionable improvements, understand the internal customer’s voice, and propose sustainable solutions is essential for success in this role.</p>
+
+                    <h3>Key Objectives (Part A - Initial Problem Statement)</h3>
+                    <ul class="timeline-detail">
+                        <li><strong>Refreshing critical topics after onboarding:</strong> Ensuring continuous knowledge retention beyond initial training.</li>
+                        <li><strong>Correcting frequent errors identified by the Quality team:</strong> Implementing targeted interventions to reduce operational errors.</li>
+                        <li><strong>Implementing updates to processes or operational SOPs:</strong> Ensuring agents are quickly aligned with new procedures and standards.</li>
+                    </ul>
+                    <p class="mt-4">Currently, these training sessions are sporadic, difficult to measure, and disconnected from performance results.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Executive Summary -->
+        <section id="executive">
+            <div class="container">
+                <div class="slide">
+                    <h1>Training Excellence Framework</h1>
+                    <h2>🎯 Executive Summary</h2>
+                    
+                    <div class="exec-grid">
+                        <div class="exec-card">
+                            <div class="number">45%</div>
+                            <h3>Error Reduction</h3>
+                            <p>Target: 18% → <8% error rate</p>
+                        </div>
+                        <div class="exec-card">
+                            <div class="number">300%+</div>
+                            <h3>ROI Target</h3>
+                            <p>Measurable business impact within 12 months</p>
+                        </div>
+                        <div class="exec-card">
+                            <div class="number">6 Mo</div>
+                            <h3>Scale Timeline</h3>
+                            <p>20 → 100+ agents</p>
+                        </div>
+                        <div class="exec-card">
+                            <div class="number">AI-Powered</div>
+                            <h3>Innovation</h3>
+                            <p>Personalized learning paths</p>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <h3>Value Proposition</h3>
+                        <div class="chart">
+                            <div style="font-size: 2.2rem; font-weight: bold; margin-bottom: 1rem; color: white;">
+                                From Sporadic Training <span style="font-size: 1.5rem;">➡️</span> To Operational Excellence
+                            </div>
+                            <div style="font-size: 1.8rem; margin-bottom: 1rem; color: white;">
+                                Our Framework Delivers:
+                            </div>
+                            <div style="font-size: 2rem; font-weight: bold; color: white;">
+                                <span style="color: #66ff66;">✓ Systematic</span> • <span style="color: #ffcc66;">✓ Measurable</span> • <span style="color: #66ccff;">✓ Scalable</span>
+                            </div>
+                            <div style="font-size: 1.2rem; margin-top: 1rem; color: white;">
+                                Ensuring Continuous Skill Enhancement & Error Reduction
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Design -->
+        <section id="process">
+            <div class="container">
+                <div class="slide">
+                    <h2>🔄 Training Excellence Framework Process</h2>
+                    <p><strong>Process Name:</strong> Training Excellence Framework (TEF)</p>
+                    <p class="mb-4"><strong>General Objective:</strong> Establish a systematic, measurable, and scalable reinforcement training process that ensures continuous skill enhancement, error reduction, and operational excellence across the Shared Services Center, **achieving key metrics within 6 months.**</p>
+
+                    <h3>Key Success Metrics</h3>
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-icon">📉</div>
+                            <div class="metric-value">&lt;10%</div>
+                            <div class="metric-label">Error Rate Reduction</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-icon">📈</div>
+                            <div class="metric-value">&gt;85%</div>
+                            <div class="metric-label">Training Attendance</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-icon">🧠</div>
+                            <div class="metric-value">&gt;80%</div>
+                            <div class="metric-label">Knowledge Retention</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-icon">😊</div>
+                            <div class="metric-value">&gt;4.0/5.0</div>
+                            <div class="metric-label">Employee Satisfaction</div>
+                        </div>
+                    </div>
+
+                    <h3>Process Flow Design (Visual Flow)</h3>
+                    <div class="visual-process-flow">
+                        <div class="process-block">
+                            <div class="phase-number">1</div>
+                            <h4>Need Identification & Analysis</h4>
+                            <p>Review data, assess needs, identify gaps.</p>
+                        </div>
+                        <div class="process-block">
+                            <div class="phase-number">2</div>
+                            <h4>Training Design & Scheduling</h4>
+                            <p>Develop content, smart scheduling, resource optimization.</p>
+                        </div>
+                        <div class="process-block">
+                            <div class="phase-number">3</div>
+                            <h4>Delivery & Engagement</h4>
+                            <p>Multi-modal delivery, real-time tracking.</p>
+                        </div>
+                        <div class="process-block">
+                            <div class="phase-number">4</div>
+                            <h4>Assessment & Follow-Up</h4>
+                            <p>Validate knowledge, measure performance impact.</p>
+                        </div>
+                        <div class="process-block">
+                            <div class="phase-number">5</div>
+                            <h4>Continuous Improvement</h4>
+                            <p>Analyze data, calculate ROI, optimize processes.</p>
+                        </div>
+                    </div>
+
+                    <h3>Process Phases Details (Table)</h3>
+                    <table class="process-phases-table">
+                        <thead>
+                            <tr>
+                                <th>Phase</th>
+                                <th>Activities</th>
+                                <th>Responsible</th>
+                                <th>Key Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1. Need Identification & Analysis</td>
+                                <td>
+                                    <ul>
+                                        <li>📊 Performance Data Review (Quality team error analysis, Agent dashboards, Customer feedback)</li>
+                                        <li>📝 Training Need Assessment (Gap analysis, Skills matrix, Priority classification)</li>
+                                    </ul>
+                                </td>
+                                <td>Quality Analysts + Data Scientists</td>
+                                <td>Frequency: Daily monitoring, weekly analysis</td>
+                            </tr>
+                            <tr>
+                                <td>2. Training Design & Scheduling</td>
+                                <td>
+                                    <ul>
+                                        <li>✍️ Content Development (Microlearning modules, Interactive scenarios, Assessment tools)</li>
+                                        <li>🗓️ Smart Scheduling (AI-powered optimal timing, Individual learning path, Resource allocation)</li>
+                                    </ul>
+                                </td>
+                                <td>SMEs + Training Coordinators</td>
+                                <td>Innovation: Personalized learning paths</td>
+                            </tr>
+                            <tr>
+                                <td>3. Delivery & Engagement</td>
+                                <td>
+                                    <ul>
+                                        <li>💻 Multi-Modal Training Delivery (Live virtual, Self-paced digital, Peer-to-peer circles)</li>
+                                        <li>🚀 Real-Time Engagement Tracking (Attendance monitoring, Participation analytics, Immediate feedback)</li>
+                                    </ul>
+                                </td>
+                                <td>Training Team + Supervisors</td>
+                                <td>Technology: Mobile-first microlearning</td>
+                            </tr>
+                            <tr>
+                                <td>4. Assessment & Follow-Up</td>
+                                <td>
+                                    <ul>
+                                        <li>✅ Knowledge Validation (Post-training assessments, Practical skill demos, Certification tracking)</li>
+                                        <li>📈 Performance Impact Measurement (30-60-90 day tracking, Error rate, Behavioral change)</li>
+                                    </ul>
+                                </td>
+                                <td>All Stakeholders</td>
+                                <td>Metrics: 30-60-90 day impact measurement</td>
+                            </tr>
+                            <tr>
+                                <td>5. Continuous Improvement</td>
+                                <td>
+                                    <ul>
+                                        <li>🔬 Data Analysis & Insights (Training effectiveness, ROI calculation, Trend identification)</li>
+                                        <li>🔄 Process Optimization (Content updates, Delivery refinements, Technology enhancements)</li>
+                                    </ul>
+                                </td>
+                                <td>L&D Manager + Process Improvement Specialist</td>
+                                <td>Output: Enhanced framework for next cycle</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                    <h3>Deployment Plan</h3>
+                    <h4>Responsible Roles & Responsibilities</h4>
+                    <table class="deployment-table">
+                        <thead>
+                            <tr>
+                                <th>Role</th>
+                                <th>Primary Responsibilities</th>
+                                <th>Key Metrics</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Training Coordinator</td>
+                                <td>Process orchestration, scheduling, vendor management</td>
+                                <td>Training delivery rate, resource utilization</td>
+                            </tr>
+                            <tr>
+                                <td>Quality Analysts</td>
+                                <td>Error identification, training need assessment</td>
+                                <td>Error trend analysis, gap identification accuracy</td>
+                            </tr>
+                            <tr>
+                                <td>Subject Matter Experts</td>
+                                <td>Content development, delivery, technical guidance</td>
+                                <td>Content quality score, expert availability</td>
+                            </tr>
+                            <tr>
+                                <td>Team Supervisors</td>
+                                <td>Agent coaching, performance monitoring, feedback</td>
+                                <td>Agent performance improvement, coaching effectiveness</td>
+                            </tr>
+                            <tr>
+                                <td>Learning & Development Manager</td>
+                                <td>Strategy oversight, budget management, stakeholder communication</td>
+                                <td>Overall program effectiveness, ROI achievement</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>Implementation Timeline</h4>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h3>Wave 1: Proof of Concept <span class="text-xs opacity-80">(Weeks 1-8)</span></h3>
+                                <p>Pilot with 20 agents</p>
+                                <ul class="timeline-detail">
+                                    <li>✔️ Validate core process improvements</li>
+                                    <li>🔄 Refine content and delivery methods</li>
+                                    <li>📊 Establish baseline metrics</li>
+                                    <li>🤝 Build change management momentum</li>
+                                </ul>
+                                <div class="progress-bar"><div class="progress-fill" style="width: 33%;"></div></div>
+                            </div>
+                            <div class="timeline-marker"></div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h3>Wave 2: Controlled Expansion <span class="text-xs opacity-80">(Weeks 9-16)</span></h3>
+                                <p>Expand to 50 agents</p>
+                                <ul class="timeline-detail">
+                                    <li>⚙️ Scale technology infrastructure</li>
+                                    <li>👨‍🏫 Develop trainer capacity</li>
+                                    <li>📈 Implement advanced analytics</li>
+                                    <li>💡 Optimize resource allocation</li>
+                                </ul>
+                                <div class="progress-bar"><div class="progress-fill" style="width: 66%;"></div></div>
+                            </div>
+                            <div class="timeline-marker"></div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h3>Wave 3: Full Deployment <span class="text-xs opacity-80">(Weeks 17-24)</span></h3>
+                                <p>Rollout to 100+ agents</p>
+                                <ul class="timeline-detail">
+                                    <li>🚀 Complete rollout with automation</li>
+                                    <li>🔄 Establish self-sustaining processes</li>
+                                    <li>🔁 Implement continuous improvement cycles</li>
+                                    <li>📝 Document best practices and lessons learned</li>
+                                </ul>
+                                <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
+                            </div>
+                            <div class="timeline-marker"></div>
+                        </div>
+                    </div>
+
+                    <h3>Key Performance Indicators (KPIs)</h3>
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-icon">📊</div>
+                            <div class="metric-value">90%+</div>
+                            <div class="metric-label">Session Completion</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-icon">🎯</div>
+                            <div class="metric-value">📉 &lt;10%</div>
+                            <div class="metric-label">Post-Training Errors</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-icon">🧠</div>
+                            <div class="metric-value">📈 &gt;80%</div>
+                            <div class="metric-label">Knowledge Retention</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-icon">💰</div>
+                            <div class="metric-value">🚀 &gt;300%</div>
+                            <div class="metric-label">Training ROI</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Part B Introduction -->
+        <section id="part-b">
+            <div class="container">
+                <div class="slide">
+                    <h2>📊 Part B: Improvement Analysis and Intervention</h2>
+                    <h3>Problem Definition (Based on Pilot Data)</h3>
+                    <p>After the initial implementation cycle with 20 agents, the following operational data was identified:</p>
+                    <ul class="timeline-detail">
+                        <li><strong>5 training sessions scheduled per week</strong></li>
+                        <li><strong>Average attendance:</strong> 60% (Below target of >85%)</li>
+                        <li><strong>Post-training error rate:</strong> 18% (Significantly above target of <10%)</li>
+                        <li><strong>Average satisfaction score:</strong> 3.2/5 (Below target of >4.0/5.0)</li>
+                        <li><strong>Supervisor feedback:</strong> Low retention of technical topics.</li>
+                    </ul>
+                    <p class="mt-4">This data indicates a clear gap between the desired training effectiveness and the actual outcomes. The current approach is failing to achieve the necessary engagement, knowledge transfer, and error reduction required for operational excellence and scalability.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Current State Analysis -->
+        <section id="analysis">
+            <div class="container">
+                <div class="slide">
+                    <h2>🔍 Current State Analysis & Improvements</h2>
+                    
+                    <div class="comparison-container">
+                        <div class="initial-plan">
+                            <h3>📈 Initial Plan Metrics</h3>
+                            <div class="comparison-metric">
+                                <div class="metric-icon">🎯</div>
+                                <div class="comparison-value">85%+</div>
+                                <div>Target Attendance</div>
+                                <div class="comparison-metric-bar">
+                                    <div class="comparison-metric-fill" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                            <div class="comparison-metric">
+                                <div class="metric-icon">🎯</div>
+                                <div class="comparison-value">&lt;10%</div>
+                                <div>Target Error Rate</div>
+                                <div class="comparison-metric-bar">
+                                    <div class="comparison-metric-fill" style="width: 10%;"></div>
+                                </div>
+                            </div>
+                            <div class="comparison-metric">
+                                <div class="metric-icon">🎯</div>
+                                <div class="comparison-value">4.0/5</div>
+                                <div>Target Satisfaction</div>
+                                <div class="comparison-metric-bar">
+                                    <div class="comparison-metric-fill" style="width: calc((4.0/5) * 100%);"></div>
+                                </div>
+                            </div>
+                            <div class="comparison-metric">
+                                <div class="metric-icon">🎯</div>
+                                <div class="comparison-value">80%+</div>
+                                <div>Target Knowledge Retention</div>
+                                <div class="comparison-metric-bar">
+                                    <div class="comparison-metric-fill" style="width: 80%;"></div>
+                                </div>
+                            </div>
+                            <p class="font-bold mt-4">These were the initial objectives set for the Training Excellence Framework.</p>
+                        </div>
+
+                        <div class="current-state">
+                            <h3>❌ Current State <span style="font-size: 0.9em; opacity: 0.8;">(Pilot Data - 20 Agents)</span></h3>
+                            <div class="comparison-metric">
+                                <div class="metric-icon">⚠️</div>
+                                <div class="comparison-value">60%</div>
+                                <div>Avg. Attendance</div>
+                                <div class="comparison-metric-bar">
+                                    <div class="comparison-metric-fill" style="width: 60%;"></div>
+                                </div>
+                            </div>
+                            <div class="comparison-metric">
+                                <div class="metric-icon">🚨</div>
+                                <div class="comparison-value">18%</div>
+                                <div>Post-Training Error Rate</div>
+                                <div class="comparison-metric-bar">
+                                    <div class="comparison-metric-fill" style="width: 18%;"></div>
+                                </div>
+                            </div>
+                            <div class="comparison-metric">
+                                <div class="metric-icon">😔</div>
+                                <div class="comparison-value">3.2/5</div>
+                                <div>Avg. Satisfaction Score</div>
+                                <div class="comparison-metric-bar">
+                                    <div class="comparison-metric-fill" style="width: calc((3.2/5) * 100%);"></div>
+                                </div>
+                            </div>
+                            <div class="comparison-metric">
+                                <div class="metric-icon">📉</div>
+                                <div class="comparison-value">LOW</div>
+                                <div>Knowledge Retention</div>
+                                <div class="comparison-metric-bar">
+                                    <div class="comparison-metric-fill" style="width: 40%;"></div> <!-- Placeholder for LOW -->
+                                </div>
+                            </div>
+                            <p class="font-bold mt-4">Primary Challenge: Low engagement, poor knowledge retention, and insufficient performance impact, resulting in suboptimal operational outcomes.</p>
+                             <h4 class="mt-4">Impact Assessment:</h4>
+                            <ul class="timeline-detail">
+                                <li><strong>Quality Risk:</strong> 80% higher error rate than target</li>
+                                <li><strong>Efficiency Loss:</strong> 40% training effectiveness gap</li>
+                                <li><strong>Employee Experience:</strong> Below-average satisfaction scores</li>
+                                <li><strong>Scalability Concern:</strong> Current model unsustainable for 100+ agents</li>
+                            </ul>
+                        </div>
+
+                        <div class="target-state">
+                            <h3>✅ Intervention Target</h3>
+                            <div class="comparison-metric">
+                                <div class="metric-icon">✅</div>
+                                <div class="comparison-value">90%+</div>
+                                <div>Attendance Rate</div>
+                                <div class="comparison-metric-bar">
+                                    <div class="comparison-metric-fill" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                            <div class="comparison-metric">
+                                <div class="metric-icon">✅</div>
+                                <div class="comparison-value">&lt;8%</div>
+                                <div>Error Rate</div>
+                                <div class="comparison-metric-bar">
+                                    <div class="comparison-metric-fill" style="width: 8%;"></div>
+                                </div>
+                            </div>
+                            <div class="comparison-metric">
+                                <div class="metric-icon">😊</div>
+                                <div class="comparison-value">4.2/5</div>
+                                <div>Satisfaction Score</div>
+                                <div class="comparison-metric-bar">
+                                    <div class="comparison-metric-fill" style="width: calc((4.2/5) * 100%);"></div>
+                                </div>
+                            </div>
+                            <div class="comparison-metric">
+                                <div class="metric-icon">🧠</div>
+                                <div class="comparison-value">85%+</div>
+                                <div>Knowledge Retention</div>
+                                <div class="comparison-metric-bar">
+                                    <div class="comparison-metric-fill" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                             <p class="font-bold mt-4">Goal: Achieve measurable operational excellence and sustained improvements.</p>
+                        </div>
+                    </div>
+
+                    <h3>🎯 Root Cause Analysis & Proposed Solutions</h3>
+                    <div class="innovation-grid">
+                        <div class="root-cause-card">
+                            <h4>Engagement Issues (Low Attendance)</h4>
+                            <p><strong>Cause:</strong> Scheduling conflicts with operational demands.</p>
+                            <p><strong>Evidence:</strong> Average attendance of 60% in pilot data.</p>
+                            <p><strong>Impact:</strong> Missed training opportunities, inconsistent skill development.</p>
+                            <p><strong>Solution:</strong> 🤖 AI-Powered Smart Scheduling.</p>
+                            <p><strong>Improvement:</strong> Eliminates conflicts through intelligent optimization, targeting +90% Attendance.</p>
+                        </div>
+                        <div class="root-cause-card">
+                            <h4>Learning Effectiveness (Poor Retention)</h4>
+                            <p><strong>Cause:</strong> Passive learning approach, information overload.</p>
+                            <p><strong>Evidence:</strong> Supervisor feedback on low retention of technical topics.</p>
+                            <p><strong>Impact:</strong> Knowledge gaps, errors persisting despite training.</p>
+                            <p><strong>Solution:</strong> 📱 Personalized Microlearning Architecture.</p>
+                            <p><strong>Improvement:</strong> 10-15 min focused modules, targeting +85% Retention.</p>
+                        </div>
+                        <div class="root-cause-card">
+                            <h4>Content Relevance (High Error Rate)</h4>
+                            <p><strong>Cause:</strong> Generic content not addressing specific error patterns.</p>
+                            <p><strong>Evidence:</strong> Post-training error rate of 18% (target <10%).</p>
+                            <p><strong>Impact:</strong> Continued operational errors, reduced service quality.</p>
+                            <p><strong>Solution:</strong> 🎯 Error-Driven Content Curation.</p>
+                            <p><strong>Improvement:</strong> Real-time error analysis & targeted content, targeting <8% Error Rate.</p>
+                        </div>
+                        <div class="root-cause-card">
+                            <h4>Measurement Gaps (Low Satisfaction)</h4>
+                            <p><strong>Cause:</strong> Lack of personalized learning paths, poor feedback loops.</p>
+                            <p><strong>Evidence:</strong> Average satisfaction score of 3.2/5 (target >4.0/5.0).</p>
+                            <p><strong>Impact:</strong> Demotivated agents, lack of continuous improvement from feedback.</p>
+                            <p><strong>Solution:</strong> 🏆 Gamification & Social Learning.</p>
+                            <p><strong>Improvement:</strong> Points, badges, leaderboards, peer mentoring, targeting +4.2/5 Satisfaction.</p>
+                        </div>
+                    </div>
+
+                    <h3>⚙️ Process Adjustments: Before vs. After</h3>
+                    <table class="process-adjustment-table">
+                        <thead>
+                            <tr>
+                                <th>Aspect</th>
+                                <th>Before Adjustment (Initial Process)</th>
+                                <th>After Adjustment (Improved Process)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Need Identification</td>
+                                <td>Sporadic quality team error analysis, general agent performance dashboards.</td>
+                                <td><strong>Enhanced Need Identification:</strong> Real-time error pattern analysis by Quality Analysts + Data Scientists, daily monitoring, weekly analysis.</td>
+                            </tr>
+                            <tr>
+                                <td>Content Development</td>
+                                <td>Generic content, one-size-fits-all approach.</td>
+                                <td><strong>Personalized Content Development:</strong> Individual learning path creation by Learning Algorithm + SMEs, customized training modules.</td>
+                            </tr>
+                            <tr>
+                                <td>Training Delivery</td>
+                                <td>Scheduled live sessions, limited flexibility.</td>
+                                <td><strong>Flexible Delivery Model:</strong> Multi-channel, on-demand access (live, recorded, mobile, desktop) by Training Coordinators + Technology Team.</td>
+                            </tr>
+                            <tr>
+                                <td>Feedback & Monitoring</td>
+                                <td>Limited post-training assessments, manual feedback collection.</td>
+                                <td><strong>Continuous Feedback Loop:</strong> Real-time satisfaction and comprehension tracking, instant feedback systems (All stakeholders).</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="explanation-box">
+                        <h4><span class="icon">📈</span> New Metrics & Monitoring: An Enhanced Approach</h4>
+                        <p>The **"New Metrics & Monitoring"** presented here are an *enhancement* to the "Key Success Metrics" outlined in Part A.</p>
+                        <p>While Part A defined the overall targets for the framework, this section details the *advanced methods* and specific KPIs that will be used to track progress and ensure the effectiveness of the *improved* process in real-time. This moves beyond simple reporting to predictive insights and actionable data.</p>
+                    </div>
+
+                    <div class="explanation-box">
+                        <h4><span class="icon">🚦</span> Phase Gate Approach: Structured Implementation</h4>
+                        <p>The **"Implementation Timeline"** (Wave 1, Wave 2, Wave 3) functions as a **Phase Gate Approach**.</p>
+                        <p>This structured methodology ensures a controlled and validated deployment:</p>
+                        <ul>
+                            <li>Each wave represents a distinct phase with specific objectives, deliverables, and success criteria.</li>
+                            <li>Progressing from one wave to the next requires a formal "gate review" and validation of the preceding phase's outcomes.</li>
+                            <li>This approach ensures that learnings from earlier stages are incorporated, risks are mitigated, and resources are optimized before committing to broader expansion.</li>
+                        </ul>
+                    </div>
+
+                    <h4>Enhanced KPI Dashboard:</h4>
+                    <ul class="timeline-detail">
+                        <li>📈 <strong>Real-Time Metrics:</strong> Live attendance tracking, Engagement heat maps, Immediate comprehension scores, Error pattern correlation.</li>
+                        <li>🔮 <strong>Predictive Analytics:</strong> Performance improvement forecasting, At-risk agent identification, Training need prediction, Resource requirement planning.</li>
+                        <li>📝 <strong>Advanced Reporting:</strong> Individual progress dashboards, Team performance comparisons, ROI calculation by training type, Trend analysis and recommendations.</li>
+                    </ul>
+
+                    <h3>✅ Effectiveness Verification Strategy</h3>
+                    <ul class="timeline-detail">
+                        <li>✔️ <strong>30-Day Quick Wins Measurement:</strong> Attendance rate improvement, Immediate post-training assessment scores, Early error rate trends, Participant feedback scores.</li>
+                        <li>🎯 <strong>90-Day Impact Assessment:</strong> Sustained error rate reduction, Knowledge retention verification, Performance consistency measurement, Customer satisfaction correlation.</li>
+                        <li>🚀 <strong>6-Month Scalability Validation:</strong> 100+ agent deployment success, Cost-per-training optimization, Process automation effectiveness, Long-term performance sustainability.</li>
+                    </ul>
+                    <h4>Validation Methods:</h4>
+                    <ul class="timeline-detail">
+                        <li>🧪 <strong>A/B Testing:</strong> Control vs. enhanced process groups.</li>
+                        <li>📈 <strong>Statistical Analysis:</strong> Before/after performance comparison.</li>
+                        <li>🗣️ <strong>Qualitative Assessment:</strong> Focus groups and interviews.</li>
+                        <li>💰 <strong>Business Impact Measurement:</strong> Customer satisfaction and operational efficiency correlation.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scaling Strategy -->
+        <section id="scaling">
+            <div class="container">
+                <div class="slide">
+                    <h2>🚀 Scaling Strategy: 20 → 100+ Agents in 6 Months</h2>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h3>Wave 1: Proof of Concept <span class="text-xs opacity-80">(Weeks 1-8)</span></h3>
+                                <p>Pilot with 20 agents</p>
+                                <ul class="timeline-detail">
+                                    <li>✔️ Validate core process improvements</li>
+                                    <li>🔄 Refine content and delivery methods</li>
+                                    <li>📊 Establish baseline metrics</li>
+                                    <li>🤝 Build change management momentum</li>
+                                </ul>
+                                <div class="progress-bar"><div class="progress-fill" style="width: 33%;"></div></div>
+                            </div>
+                            <div class="timeline-marker"></div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h3>Wave 2: Controlled Expansion <span class="text-xs opacity-80">(Weeks 9-16)</span></h3>
+                                <p>Expand to 50 agents</p>
+                                <ul class="timeline-detail">
+                                    <li>⚙️ Scale technology infrastructure</li>
+                                    <li>👨‍🏫 Develop trainer capacity</li>
+                                    <li>📈 Implement advanced analytics</li>
+                                    <li>💡 Optimize resource allocation</li>
+                                </ul>
+                                <div class="progress-bar"><div class="progress-fill" style="width: 66%;"></div></div>
+                            </div>
+                            <div class="timeline-marker"></div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h3>Wave 3: Full Deployment <span class="text-xs opacity-80">(Weeks 17-24)</span></h3>
+                                <p>Rollout to 100+ agents</p>
+                                <ul class="timeline-detail">
+                                    <li>🚀 Complete rollout with automation</li>
+                                    <li>🔄 Establish self-sustaining processes</li>
+                                    <li>🔁 Implement continuous improvement cycles</li>
+                                    <li>📝 Document best practices and lessons learned</li>
+                                </ul>
+                                <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
+                            </div>
+                            <div class="timeline-marker"></div>
+                        </div>
+                    </div>
+
+                    <h3>🔧 Sustainability Framework: Technology & Process Enablers</h3>
+                    <div class="capabilities-grid">
+                        <div class="capability-card">
+                            <div class="icon">☁️</div>
+                            <h4>24/7 Learning Availability</h4>
+                            <p>Cloud-based LMS, automated content updates, self-service capabilities.</p>
+                        </div>
+                        <div class="capability-card">
+                            <div class="icon">🤖</div>
+                            <h4>95% Process Automation</h4>
+                            <p>Scheduling optimization algorithms, performance tracking dashboards.</p>
+                        </div>
+                        <div class="capability-card">
+                            <div class="icon">📱</div>
+                            <h4>Multi-Language Support</h4>
+                            <p>Mobile accessibility for all content, supporting diverse workforce.</p>
+                        </div>
+                        <div class="capability-card">
+                            <div class="icon">⚡</div>
+                            <h4>Reduced Manual Effort</h4>
+                            <p>Streamlined processes minimizing manual intervention per training cycle.</p>
+                        </div>
+                    </div>
+                    <h4>Organizational Capabilities for Sustainability:</h4>
+                    <ul class="timeline-detail">
+                        <li>👨‍🏫 Train-the-trainer programs: Empowering internal staff to lead and scale training efforts.</li>
+                        <li>✍️ Internal content development capabilities: Fostering agile content creation.</li>
+                        <li>🤝 Peer mentoring networks: Building a collaborative learning culture.</li>
+                        <li>🔄 Continuous improvement culture: Embedding iterative refinement into daily operations.</li>
+                    </ul>
+
+                    <h3>📈 Success Metrics for Scale</h3>
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-icon">🏆</div>
+                            <div class="metric-trend">Operational Excellence</div>
+                            <div class="metric-value">95%</div>
+                            <div class="metric-label">Process Automation</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-icon">✅</div>
+                            <div class="metric-trend">Quality Assurance</div>
+                            <div class="metric-value">&lt;8%</div>
+                            <div class="metric-label">Consistent Error Rates</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-icon">💰</div>
+                            <div class="metric-trend">Business Impact</div>
+                            <div class="metric-value">🚀 400%</div>
+                            <div class="metric-label">Training ROI</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-icon">👍</div>
+                            <div class="metric-trend">Employee Engagement</div>
+                            <div class="metric-value">95%</div>
+                            <div class="metric-label">Training Engagement</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ROI Impact -->
+        <section id="roi">
+            <div class="container">
+                <div class="slide">
+                    <h2>📈 Business Impact & ROI</h2>
+                    
+                    <div class="roi-calculator">
+                        <h3 style="color: white; text-align: center; margin-bottom: 2rem;">💰 ROI Calculator - 12 Month Projection</h3>
+                        <div class="roi-chart-wheel"></div> <!-- The CSS will render the wheel chart -->
+                        <div class="roi-grid">
+                            <div class="roi-item">
+                                <div class="roi-number">40%</div>
+                                <div>Cost Reduction per Agent</div>
+                            </div>
+                            <div class="roi-item">
+                                <div class="roi-number">25%</div>
+                                <div>Productivity Improvement</div>
+                            </div>
+                            <div class="roi-item">
+                                <div class="roi-number">35%</div>
+                                <div>Rework Cost Reduction</div> <!-- Adjusted to make 100% with others -->
+                            </div>
+                            <div class="roi-item">
+                                <div class="roi-number">400%</div>
+                                <div>Total ROI Target</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Illustrative ROI Calculation for the Training Excellence Framework (TEF)</h3>
+                    <p class="mb-4">This table breaks down the investment and estimated annual benefits to demonstrate the projected ROI within a BPO context.</p>
+                    <table class="roi-details-table">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Annual Investment ($)</th>
+                                <th>Estimated Annual Benefit ($)</th>
+                                <th>Justification / Impact KPI in BPO</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="4" style="background: rgba(230,230,230,0.8); font-weight: bold; text-align: center;">Project Costs (Investment)</td>
+                            </tr>
+                            <tr>
+                                <td>Technology (LMS, AI, Analytics)</td>
+                                <td>60,000</td>
+                                <td>-</td>
+                                <td>Platform for personalized learning, intelligent scheduling, and performance analytics.</td>
+                            </tr>
+                            <tr>
+                                <td>Specialized Content Development</td>
+                                <td>25,000</td>
+                                <td>-</td>
+                                <td>Creation of microlearning modules and specific scenarios for client processes.</td>
+                            </tr>
+                            <tr>
+                                <td>Continuous Improvement Resources</td>
+                                <td>15,000</td>
+                                <td>-</td>
+                                <td>Dedicated roles for ongoing optimization of the training process and feedback integration.</td>
+                            </tr>
+                            <tr class="total-row">
+                                <td>TOTAL INVESTMENT</td>
+                                <td>100,000</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="background: rgba(230,230,230,0.8); font-weight: bold; text-align: center;">Annual Benefits (Return)</td>
+                            </tr>
+                            <tr>
+                                <td>Error Reduction & Rework Avoidance</td>
+                                <td>-</td>
+                                <td>150,000</td>
+                                <td>Post-training error rate 18% → <8%. Direct impact on client service quality and 50% reduction in rework costs.</td>
+                            </tr>
+                            <tr>
+                                <td>Operational Efficiency Increase</td>
+                                <td>-</td>
+                                <td>200,000</td>
+                                <td>+25% in processing efficiency per agent. Allows for higher work volume or assignment to higher-value tasks.</td>
+                            </tr>
+                            <tr>
+                                <td>Reduced Onboarding Time</td>
+                                <td>-</td>
+                                <td>50,000</td>
+                                <td>-25% in time for a new agent to become productive, critical for agility in BPO contract management.</td>
+                            </tr>
+                            <tr>
+                                <td>Improved Client Satisfaction/Retention</td>
+                                <td>-</td>
+                                <td>80,000</td>
+                                <td>+15% in client satisfaction. Strengthens client relationships and encourages contract renewal/expansion.</td>
+                            </tr>
+                            <tr class="total-row">
+                                <td>TOTAL BENEFITS</td>
+                                <td>-</td>
+                                <td>480,000</td>
+                                <td></td>
+                            </tr>
+                            <tr class="roi-calculation-row">
+                                <td>Annual Net Benefit</td>
+                                <td></td>
+                                <td>380,000</td>
+                                <td>($480,000 − $100,000)</td>
+                            </tr>
+                            <tr class="roi-calculation-row">
+                                <td>Annual ROI</td>
+                                <td></td>
+                                <td>380%</td>
+                                <td>($380,000 / $100,000) * 100%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                    <div class="chart-container">
+                        <h3>🚀 Innovation Highlights</h3>
+                        <div class="innovation-grid">
+                            <div class="innovation-card">
+                                <div class="innovation-icon">🧠</div>
+                                <h3>AI Learning Personalization</h3>
+                                <p>Machine learning creates individual journeys based on performance data, learning style, and career goals.</p>
+                            </div>
+                            <div class="innovation-card">
+                                <div class="innovation-icon">⚡</div>
+                                <h3>Real-Time Error Pipeline</h3>
+                                <p>Automates error detection and targeted content generation within 24 hours of trend identification.</p>
+                            </div>
+                            <div class="innovation-card">
+                                <div class="innovation-icon">📊</div>
+                                <h3>Predictive Performance Analytics</h3>
+                                <p>Forecasts performance issues and proactively schedules interventions before problems impact customer experience.</p>
+                            </div>
+                            <div class="innovation-card">
+                                <div class="innovation-icon">👥</div>
+                                <h3>Social Learning Ecosystem</h3>
+                                <p>Community-driven platform where top performers become peer mentors, fostering a sustainable knowledge-sharing culture.</p>
+                            </div>
+                             <div class="innovation-card">
+                                <div class="innovation-icon">📱</div>
+                                <h3>Mobile-First Microlearning</h3>
+                                <p>Bite-sized, mobile-optimized content that fits into agents' daily workflows without disrupting productivity.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion & Next Steps -->
+        <section id="conclusion">
+            <div class="container">
+                <div class="slide">
+                    <h2>🎯 Conclusion & Next Steps</h2>
+                    <div class="conclusion-card">
+                        <h3>Key Success Factors</h3>
+                        <ul>
+                            <li>✔️ Leadership Commitment: Executive sponsorship and resource allocation.</li>
+                            <li>✔️ Technology Investment: Modern learning platform and analytics tools.</li>
+                            <li>✔️ Change Management: Comprehensive communication and engagement strategy.</li>
+                            <li>✔️ Continuous Improvement: Regular process optimization and innovation.</li>
+                        </ul>
+
+                        <h3>Immediate Actions Required</h3>
+                        <ul>
+                            <li>🚀 Stakeholder Alignment: Secure leadership buy-in and resource commitment.</li>
+                            <li>⚙️ Technology Selection: Evaluate and procure learning management platform.</li>
+                            <li>🤝 Team Formation: Assemble cross-functional project team.</li>
+                            <li>📝 Pilot Preparation: Select pilot group and develop initial content.</li>
+                        </ul>
+                        <p class="thank-you">Thank you. Gabriel Cuevas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
